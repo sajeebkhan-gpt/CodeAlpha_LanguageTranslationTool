@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha Language Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-language"></i> CodeAlpha Translator</h1>
+            <p>AI-Powered Language Translation Tool</p>
+        </header>
+
+        <div class="translator-box">
+            <!-- Source Language Section -->
+            <div class="language-section">
+                <div class="lang-header">
+                    <select id="source-lang" class="lang-select">
+                        <!-- Populated by JS -->
+                    </select>
+                    <button id="auto-detect" class="btn-secondary">Auto Detect</button>
+                </div>
+                <textarea id="input-text" placeholder="Enter text to translate..."></textarea>
+                <div class="char-count"><span id="input-count">0</span>/5000</div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="swap-btn" class="btn-icon" title="Swap languages">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+                <button id="translate-btn" class="btn-primary">
+                    <i class="fas fa-arrow-right"></i> Translate
+                </button>
+            </div>
+
+            <!-- Target Language Section -->
+            <div class="language-section">
+                <div class="lang-header">
+                    <select id="target-lang" class="lang-select">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+                <div class="output-area">
+                    <div id="output-text" class="translated-text">Translation will appear here...</div>
+                    <div class="output-actions">
+                        <button id="copy-btn" class="btn-secondary" title="Copy">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button id="clear-btn" class="btn-secondary" title="Clear">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-message" class="error"></div>
+
+        <footer>
+            <p>Built with Flask &amp; Google Translate • For CodeAlpha AI Internship</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
